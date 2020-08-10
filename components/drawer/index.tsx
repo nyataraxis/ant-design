@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import RcDrawer from 'rc-drawer';
-import createReactContext, { Context } from 'create-react-context';
+import createReactContext from 'create-react-context';
 import warning from 'warning';
 import classNames from 'classnames';
 import Icon from '../icon';
 import { tuple } from '../_util/type';
 
-const DrawerContext: Context<Drawer | null> = createReactContext(null);
+const DrawerContext: any = createReactContext(null);
 
 type EventType = React.MouseEvent<HTMLDivElement> | React.MouseEvent<HTMLButtonElement>;
 
