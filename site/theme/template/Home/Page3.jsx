@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Tag } from 'antd';
+import { Row, Col, Tag } from 'ant-renamed';
 import QueueAnim from 'rc-queue-anim';
 import ScrollOverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { Link } from 'bisheng/router';

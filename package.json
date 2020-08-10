@@ -23,10 +23,9 @@
   "dependencies": {
     "@ant-design/icons": "=1.1.15",
     "@ant-design/icons-react": "=1.1.2",
-    "@gostgroup/rc-table": "^6.4.10",
     "array-tree-filter": "=2.1.0",
     "babel-runtime": "6.1.x",
-    "bisheng-plugin-antd": "npm:@gostgroup/bisheng-plugin-antd@^0.17.0",
+    "bisheng-plugin-antd": "npm:@gostgroup/bisheng-plugin-antd@^0.17.1",
     "classnames": "=2.2.6",
     "create-react-class": "=15.6.3",
     "create-react-context": "0.2.2",

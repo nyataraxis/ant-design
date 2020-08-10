@@ -3,7 +3,7 @@ import { ThemeType } from '../../../../components/icon';
 import manifest from '@ant-design/icons/lib/manifest';
 import { ThemeType as ThemeFolderType } from '@ant-design/icons/lib/types';
 import Category from './Category';
-import { Radio, Icon } from 'antd';
+import { Radio, Icon } from 'ant-renamed';
 import { RadioChangeEvent } from 'antd/lib/radio/interface';
 import { FilledIcon, OutlinedIcon, TwoToneIcon } from './themeIcons';
 import { categories, Categories, CategoriesKeys } from './fields';

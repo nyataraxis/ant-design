@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { enquireScreen } from 'enquire-js';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import 'moment/locale/zh-cn';
-import { LocaleProvider } from 'antd';
+import { LocaleProvider } from 'ant-renamed';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import Header from './Header';
 import enLocale from '../../en-US';
@@ -24,7 +24,7 @@ if (typeof window !== 'undefined') {
   // Expose to iframe
   window.react = React;
   window['react-dom'] = ReactDOM;
-  window.antd = require('antd');
+  window.antd = require('ant-renamed');
   /* eslint-enable global-require */
 }
 

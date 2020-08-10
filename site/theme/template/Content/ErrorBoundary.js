@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'antd';
+import { Alert } from 'ant-renamed';
 
 export default class ErrorBoundary extends React.Component {
   state = {

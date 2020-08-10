@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import DocumentTitle from 'react-document-title';
 import { getChildren } from 'jsonml.js/lib/utils';
-import { Timeline, Alert, Affix } from 'antd';
+import { Timeline, Alert, Affix } from 'ant-renamed';
 import EditButton from './EditButton';
 import { ping } from '../utils';
 

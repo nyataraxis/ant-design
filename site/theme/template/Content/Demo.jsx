@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import classNames from 'classnames';
 import LZString from 'lz-string';
-import { Icon, Tooltip } from 'antd';
+import { Icon, Tooltip } from 'ant-renamed';
 import EditButton from './EditButton';
 import ErrorBoundary from './ErrorBoundary';
 import BrowserFrame from '../BrowserFrame';
@@ -138,7 +138,7 @@ export default class Demo extends React.Component {
       title: `${localizedTitle} - Ant Design Demo`,
       html,
       js: sourceCode
-        .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'antd';/, 'const { $1 } = antd;')
+        .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'ant-renamed';/, 'const { $1 } = antd;')
         .replace("import moment from 'moment';", '')
         .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'react-router';/, 'const { $1 } = ReactRouter;')
         .replace(
@@ -169,7 +169,7 @@ export default class Demo extends React.Component {
     const dependencies = sourceCode.split('\n').reduce(
       (acc, line) => {
         const matches = line.match(/import .+? from '(.+)';$/);
-        if (matches && matches[1] && !line.includes('antd')) {
+        if (matches && matches[1] && !line.includes('ant-renamed')) {
           acc[matches[1]] = 'latest';
         }
         return acc;

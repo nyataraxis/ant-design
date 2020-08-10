@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { message } from 'antd';
+import { message } from 'ant-renamed';
 import { ThemeType } from '../../../../components/icon';
 import CopyableIcon from './CopyableIcon';
 import { injectIntl, InjectedIntlProps } from 'react-intl';

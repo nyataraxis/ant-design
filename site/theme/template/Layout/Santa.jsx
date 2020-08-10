@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip } from 'ant-renamed';
 
 export default () => {
   const now = new Date();
