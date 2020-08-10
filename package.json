@@ -23,7 +23,6 @@
   "dependencies": {
     "@ant-design/icons": "=1.1.15",
     "@ant-design/icons-react": "=1.1.2",
-    "antd-tools": "npm:@gostgroup/antd-tools@^6.4.10",
     "array-tree-filter": "=2.1.0",
     "babel-runtime": "6.x",
     "bisheng-plugin-antd": "npm:@gostgroup/bisheng-plugin-antd@^0.17.0",
@@ -86,6 +85,7 @@
     "@yesmeck/offline-plugin": "=5.0.5",
     "ansi-styles": "=3.2.1",
     "antd-theme-generator": "=1.1.4",
+    "antd-tools": "^6.4.10",
     "babel-eslint": "=10.0.1",
     "bisheng": "=1.0.0",
     "bisheng-plugin-description": "=0.1.4",
@@ -195,11 +195,6 @@
     "prettier": "node ./scripts/prettier.js",
     "clean": "antd-tools run clean",
     "just-deploy": "antd-tools run just-deploy"
-    
-  },
-  "bin": {
-    "antd-tools": "./node_modules/antd-tools/bin/antd-tools.js",
-    "antd-tools-run": "./node_modules/antd-tools/bin/antd-tools-run.js"
   },
   "pre-commit": [
     "lint-staged"
