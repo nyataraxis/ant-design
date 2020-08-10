@@ -71,7 +71,7 @@ declare module 'rc-steps';
 
 declare module 'rc-switch';
 
-declare module '@gostgroup/rc-table';
+declare module 'rc-table';
 
 declare module 'rc-tree-select';
 
