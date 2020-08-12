@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { getNodeChildren, convertTreeToEntities } from 'rc-tree/lib/util';
-import { AntTreeNodeProps, AntTreeNode } from './Tree';
+import { AntTreeNode } from './Tree';
 
 enum Record {
   None,
@@ -15,7 +15,7 @@ function traverseNodesKey(
 ) {
   const nodeList: React.ReactNode[] = getNodeChildren(rootChildren) || [];
 
-  function processNode(node: React.ReactElement<AntTreeNodeProps>) {
+  function processNode(node: any) {
     const {
       key,
       props: { children },

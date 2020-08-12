@@ -3,7 +3,6 @@ import classnames from 'classnames';
 
 import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
 import Icon from '../icon';
-import Tag from '../tag';
 import Breadcrumb, { BreadcrumbProps } from '../breadcrumb';
 import Avatar, { AvatarProps } from '../avatar';
 import TransButton from '../_util/transButton';
@@ -16,7 +15,7 @@ export interface PageHeaderProps {
   subTitle?: React.ReactNode;
   style?: React.CSSProperties;
   breadcrumb?: BreadcrumbProps;
-  tags?: React.ReactElement<Tag> | React.ReactElement<Tag>[];
+  tags?: any | any[];
   footer?: React.ReactNode;
   extra?: React.ReactNode;
   avatar?: AvatarProps;

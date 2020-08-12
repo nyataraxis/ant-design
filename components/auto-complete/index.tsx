@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Option, OptGroup } from 'rc-select';
 import classNames from 'classnames';
 import InputElement from './InputElement';
-import Input, { InputProps } from '../input';
+import Input from '../input';
 import Select, { AbstractSelectProps, SelectValue, OptionProps, OptGroupProps } from '../select';
 import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
 import { Omit } from '../_util/type';
@@ -11,21 +11,14 @@ export interface DataSourceItemObject {
   value: string;
   text: string;
 }
-export type DataSourceItemType =
-  | string
-  | DataSourceItemObject
-  | React.ReactElement<OptionProps>
-  | React.ReactElement<OptGroupProps>;
+export type DataSourceItemType = string | DataSourceItemObject | any;
 
 export interface AutoCompleteInputProps {
   onChange?: React.FormEventHandler<any>;
   value: any;
 }
 
-export type ValidInputElement =
-  | HTMLInputElement
-  | HTMLTextAreaElement
-  | React.ReactElement<AutoCompleteInputProps>;
+export type ValidInputElement = HTMLInputElement | HTMLTextAreaElement | any;
 
 export interface AutoCompleteProps extends Omit<AbstractSelectProps, 'loading'> {
   value?: SelectValue;
@@ -39,11 +32,7 @@ export interface AutoCompleteProps extends Omit<AbstractSelectProps, 'loading'> 
   onSelect?: (value: SelectValue, option: Object) => any;
   onBlur?: (value: SelectValue) => void;
   onFocus?: () => void;
-  children?:
-    | ValidInputElement
-    | React.ReactElement<InputProps>
-    | React.ReactElement<OptionProps>
-    | Array<React.ReactElement<OptionProps>>;
+  children?: ValidInputElement | any | Array<any>;
 }
 
 function isSelectOptionOrSelectOptGroup(child: any): Boolean {
@@ -77,7 +66,7 @@ export default class AutoComplete extends React.Component<AutoCompleteProps, {}>
       ) : (
         <Input />
       );
-    const elementProps = { ...(element as React.ReactElement<any>).props };
+    const elementProps = { ...(element as any).props };
     // https://github.com/ant-design/ant-design/pull/7742
     delete elementProps.children;
     return <InputElement {...elementProps}>{element}</InputElement>;

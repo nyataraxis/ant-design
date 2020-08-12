@@ -75,7 +75,7 @@ export default class Item extends React.Component<ListItemProps, any> {
   isItemContainsTextNodeAndNotSingular() {
     const { children } = this.props;
     let result;
-    React.Children.forEach(children, (element: React.ReactElement<any>) => {
+    React.Children.forEach(children, (element: any) => {
       if (typeof element === 'string') {
         result = true;
       }

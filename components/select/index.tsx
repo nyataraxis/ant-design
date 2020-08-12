@@ -14,7 +14,7 @@ export interface AbstractSelectProps {
   prefixCls?: string;
   className?: string;
   showAction?: string | string[];
-  size?: (typeof SelectSizes)[number];
+  size?: typeof SelectSizes[number];
   notFoundContent?: React.ReactNode | null;
   transitionName?: string;
   choiceTransitionName?: string;
@@ -32,9 +32,7 @@ export interface AbstractSelectProps {
   dropdownMatchSelectWidth?: boolean;
   onSearch?: (value: string) => void;
   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
-  filterOption?:
-    | boolean
-    | ((inputValue: string, option: React.ReactElement<OptionProps>) => boolean);
+  filterOption?: boolean | ((inputValue: string, option: any) => boolean);
   id?: string;
   defaultOpen?: boolean;
   open?: boolean;
@@ -58,15 +56,15 @@ const ModeOptions = tuple(
   'combobox',
   'SECRET_COMBOBOX_MODE_DO_NOT_USE',
 );
-export type ModeOption = (typeof ModeOptions)[number];
+export type ModeOption = typeof ModeOptions[number];
 export interface SelectProps<T = SelectValue> extends AbstractSelectProps {
   value?: T;
   defaultValue?: T;
   mode?: ModeOption;
   optionLabelProp?: string;
   firstActiveValue?: string | string[];
-  onChange?: (value: T, option: React.ReactElement<any> | React.ReactElement<any>[]) => void;
-  onSelect?: (value: T extends (infer I)[] ? I : T, option: React.ReactElement<any>) => void;
+  onChange?: (value: T, option: any | any[]) => void;
+  onSelect?: (value: T extends (infer I)[] ? I : T, option: any) => void;
   onDeselect?: (value: T extends (infer I)[] ? I : T) => void;
   onBlur?: (value: T) => void;
   onFocus?: () => void;
@@ -80,7 +78,7 @@ export interface SelectProps<T = SelectValue> extends AbstractSelectProps {
   optionFilterProp?: string;
   labelInValue?: boolean;
   tokenSeparators?: string[];
-  getInputElement?: () => React.ReactElement<any>;
+  getInputElement?: () => any;
   autoFocus?: boolean;
   suffixIcon?: React.ReactNode;
   removeIcon?: React.ReactNode;

@@ -1,9 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { DescriptionsItemProps } from './index';
 
 interface ColProps {
-  child: React.ReactElement<DescriptionsItemProps>;
+  child: any;
   bordered: boolean;
   colon: boolean;
   type?: 'label' | 'content';

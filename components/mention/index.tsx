@@ -8,13 +8,13 @@ import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
 
 export type MentionPlacement = 'top' | 'bottom';
 
-type SuggestionItme = React.ReactElement<{ value?: string }> | string;
+type SuggestionItme = any;
 
 export interface MentionProps {
   prefixCls?: string;
   suggestionStyle?: React.CSSProperties;
   defaultSuggestions?: Array<SuggestionItme>;
-  suggestions?: Array<React.ReactElement<any>>;
+  suggestions?: Array<any>;
   onSearchChange?: (value: string, trigger: string) => any;
   onChange?: (contentState: any) => void;
   notFoundContent?: any;

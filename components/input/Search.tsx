@@ -118,7 +118,7 @@ export default class Search extends React.Component<SearchProps, any> {
     if (!enterButton) return addonAfter;
 
     let button: React.ReactNode;
-    const enterButtonAsElement = enterButton as React.ReactElement<any>;
+    const enterButtonAsElement = enterButton as any;
     const isAntdButton =
       enterButtonAsElement.type &&
       (enterButtonAsElement.type as typeof Button).__ANT_BUTTON === true;

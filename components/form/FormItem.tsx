@@ -87,7 +87,7 @@ export default class FormItem extends React.Component<FormItemProps, any> {
       if (errors) {
         return intersperseSpace(
           errors.map((e: any, index: number) => {
-            let node: React.ReactElement<any> | null = null;
+            let node: any | null = null;
 
             if (React.isValidElement(e)) {
               node = e;
@@ -105,14 +105,14 @@ export default class FormItem extends React.Component<FormItemProps, any> {
   }
 
   getControls(children: React.ReactNode, recursively: boolean) {
-    let controls: React.ReactElement<any>[] = [];
+    let controls: any[] = [];
     const childrenArray = React.Children.toArray(children);
     for (let i = 0; i < childrenArray.length; i++) {
       if (!recursively && controls.length > 0) {
         break;
       }
 
-      const child = childrenArray[i] as React.ReactElement<any>;
+      const child = childrenArray[i] as any;
       if (
         child.type &&
         ((child.type as any) === FormItem || (child.type as any).displayName === 'FormItem')
@@ -138,7 +138,7 @@ export default class FormItem extends React.Component<FormItemProps, any> {
   }
 
   getChildProp(prop: string) {
-    const child = this.getOnlyControl() as React.ReactElement<any>;
+    const child = this.getOnlyControl() as any;
     return child && child.props && child.props[prop];
   }
 

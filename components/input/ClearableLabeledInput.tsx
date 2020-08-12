@@ -20,7 +20,7 @@ interface BasicProps {
   value?: any;
   defaultValue?: any;
   allowClear?: boolean;
-  element: React.ReactElement<any>;
+  element: any;
   handleReset: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   className?: string;
   style?: object;
@@ -80,7 +80,7 @@ class ClearableLabeledInput extends React.Component<ClearableInputProps> {
     return null;
   }
 
-  renderLabeledIcon(prefixCls: string, element: React.ReactElement<any>) {
+  renderLabeledIcon(prefixCls: string, element: any) {
     const props = this.props;
     const suffix = this.renderSuffix(prefixCls);
     if (!hasPrefixSuffix(props)) {
@@ -112,7 +112,7 @@ class ClearableLabeledInput extends React.Component<ClearableInputProps> {
     );
   }
 
-  renderInputWithLabel(prefixCls: string, labeledElement: React.ReactElement<any>) {
+  renderInputWithLabel(prefixCls: string, labeledElement: any) {
     const { addonBefore, addonAfter, style, size, className } = this.props;
     // Not wrap when there is not addons
     if (!addonBefore && !addonAfter) {
@@ -148,7 +148,7 @@ class ClearableLabeledInput extends React.Component<ClearableInputProps> {
     );
   }
 
-  renderTextAreaWithClearIcon(prefixCls: string, element: React.ReactElement<any>) {
+  renderTextAreaWithClearIcon(prefixCls: string, element: any) {
     const { value, allowClear, className, style } = this.props;
     if (!allowClear) {
       return React.cloneElement(element, {

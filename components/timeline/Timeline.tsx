@@ -57,7 +57,7 @@ export default class Timeline extends React.Component<TimelineProps, any> {
       ? [pendingItem, ...React.Children.toArray(children).reverse()]
       : [...React.Children.toArray(children), pendingItem];
 
-    const getPositionCls = (ele: React.ReactElement<any>, idx: number) => {
+    const getPositionCls = (ele: any, idx: number) => {
       if (mode === 'alternate') {
         if (ele.props.position === 'right') return `${prefixCls}-item-right`;
         if (ele.props.position === 'left') return `${prefixCls}-item-left`;
@@ -73,7 +73,7 @@ export default class Timeline extends React.Component<TimelineProps, any> {
     const truthyItems = timeLineItems.filter(item => !!item);
     const itemsCount = React.Children.count(truthyItems);
     const lastCls = `${prefixCls}-item-last`;
-    const items = React.Children.map(truthyItems, (ele: React.ReactElement<any>, idx) => {
+    const items = React.Children.map(truthyItems, (ele: any, idx) => {
       const pendingClass = idx === itemsCount - 2 ? lastCls : '';
       const readyClass = idx === itemsCount - 1 ? lastCls : '';
       return React.cloneElement(ele, {

@@ -18,7 +18,7 @@ function getNumberArray(num: string | number | undefined | null) {
 }
 
 function renderNumberList(position: number, className: string) {
-  const childrenToReturn: React.ReactElement<any>[] = [];
+  const childrenToReturn: any[] = [];
   for (let i = 0; i < 30; i++) {
     childrenToReturn.push(
       <p
@@ -39,7 +39,7 @@ export interface ScrollNumberProps {
   prefixCls?: string;
   className?: string;
   count?: string | number | null;
-  displayComponent?: React.ReactElement<HTMLElement>;
+  displayComponent?: any;
   component?: string;
   onAnimated?: Function;
   style?: React.CSSProperties;

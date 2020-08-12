@@ -176,7 +176,7 @@ class FilterMenu<T> extends React.Component<FilterMenuProps<T>, FilterMenuState<
     }
   }
 
-  renderMenus(items: ColumnFilterItem[]): React.ReactElement<any>[] {
+  renderMenus(items: ColumnFilterItem[]): any[] {
     const { dropdownPrefixCls, prefixCls } = this.props;
     return items.map(item => {
       if (item.children && item.children.length > 0) {

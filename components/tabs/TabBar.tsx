@@ -59,7 +59,7 @@ export default class TabBar extends React.Component<TabsProps> {
       className: cls,
     };
 
-    let RenderTabBar: React.ReactElement<any>;
+    let RenderTabBar: any;
 
     if (renderTabBar) {
       RenderTabBar = renderTabBar(renderProps, ScrollableInkTabBar);

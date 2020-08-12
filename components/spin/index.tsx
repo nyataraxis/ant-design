@@ -8,7 +8,7 @@ import { tuple } from '../_util/type';
 
 const SpinSizes = tuple('small', 'default', 'large');
 export type SpinSize = typeof SpinSizes[number];
-export type SpinIndicator = React.ReactElement<HTMLElement>;
+export type SpinIndicator = any;
 
 export interface SpinProps {
   prefixCls?: string;
@@ -30,8 +30,8 @@ export interface SpinState {
 // Render indicator
 let defaultIndicator: React.ReactNode = null;
 
-function renderIndicator(prefixCls: string, props: SpinProps): React.ReactNode {
-  const { indicator } = props;
+function renderIndicator(prefixCls: string, props: any): React.ReactNode {
+  const indicator: any = props.indicator;
   const dotClassName = `${prefixCls}-dot`;
 
   // should not be render default indicator when indicator value is null
@@ -39,10 +39,12 @@ function renderIndicator(prefixCls: string, props: SpinProps): React.ReactNode {
     return null;
   }
 
+  const prps: any = indicator.props;
   if (React.isValidElement(indicator)) {
-    return React.cloneElement(indicator, {
-      className: classNames(indicator.props.className, dotClassName),
-    });
+    const cls: any = {
+      className: classNames(prps.className, dotClassName),
+    };
+    return React.cloneElement(indicator, cls);
   }
 
   if (React.isValidElement(defaultIndicator)) {

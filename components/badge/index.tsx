@@ -123,7 +123,7 @@ export default class Badge extends React.Component<BadgeProps, any> {
 
   renderDispayComponent() {
     const { count } = this.props;
-    const customNode = count as React.ReactElement<any>;
+    const customNode = count as any;
     if (!customNode || typeof customNode !== 'object') {
       return undefined;
     }

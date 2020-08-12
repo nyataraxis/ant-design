@@ -32,10 +32,7 @@ export interface TabsProps {
   className?: string;
   animated?: boolean | { inkBar: boolean; tabPane: boolean };
   tabBarGutter?: number;
-  renderTabBar?: (
-    props: TabsProps,
-    DefaultTabBar: React.ComponentClass<any>,
-  ) => React.ReactElement<any>;
+  renderTabBar?: (props: TabsProps, DefaultTabBar: React.ComponentClass<any>) => any;
   destroyInactiveTabPane?: boolean;
 }
 
@@ -127,7 +124,7 @@ export default class Tabs extends React.Component<TabsProps, any> {
       [`${prefixCls}-no-animation`]: !tabPaneAnimated,
     });
     // only card type tabs can be added and closed
-    let childrenWithClose: React.ReactElement<any>[] = [];
+    let childrenWithClose: any[] = [];
     if (type === 'editable-card') {
       childrenWithClose = [];
       React.Children.forEach(children as React.ReactNode, (child, index) => {

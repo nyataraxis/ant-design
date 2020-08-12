@@ -15,7 +15,7 @@ const Placements = tuple(
   'bottomCenter',
   'bottomRight',
 );
-type Placement = (typeof Placements)[number];
+type Placement = typeof Placements[number];
 
 type OverlayFunc = () => React.ReactNode;
 
@@ -83,7 +83,7 @@ export default class Dropdown extends React.Component<DropDownProps, any> {
     } else {
       overlayNode = overlay;
     }
-    overlayNode = React.Children.only(overlayNode) as React.ReactElement<any>;
+    overlayNode = React.Children.only(overlayNode) as any;
 
     const overlayProps = overlayNode.props;
 
@@ -130,7 +130,7 @@ export default class Dropdown extends React.Component<DropDownProps, any> {
     } = this.props;
 
     const prefixCls = getPrefixCls('dropdown', customizePrefixCls);
-    const child = React.Children.only(children) as React.ReactElement<any>;
+    const child = React.Children.only(children) as any;
 
     const dropdownTrigger = React.cloneElement(child, {
       className: classNames(child.props.className, `${prefixCls}-trigger`),

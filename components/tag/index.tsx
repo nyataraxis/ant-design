@@ -119,8 +119,7 @@ class Tag extends React.Component<TagProps, TagState> {
 
   renderTag = (configProps: ConfigConsumerProps) => {
     const { children, ...otherProps } = this.props;
-    const isNeedWave =
-      'onClick' in otherProps || (children && (children as React.ReactElement<any>).type === 'a');
+    const isNeedWave = 'onClick' in otherProps || (children && (children as any).type === 'a');
     const tagProps = omit(otherProps, [
       'onClose',
       'afterClose',

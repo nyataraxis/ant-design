@@ -57,7 +57,7 @@ export default class Header extends React.Component<HeaderProps, any> {
       end = validRange[1].get('year') + 1;
     }
     const suffix = locale.year === '年' ? '年' : '';
-    const options: React.ReactElement<any>[] = [];
+    const options: any[] = [];
     for (let index = start; index < end; index++) {
       options.push(<Option key={`${index}`}>{index + suffix}</Option>);
     }
@@ -77,7 +77,7 @@ export default class Header extends React.Component<HeaderProps, any> {
 
   getMonthSelectElement(prefixCls: string, month: number, months: number[]) {
     const { fullscreen, validRange, value } = this.props;
-    const options: React.ReactElement<any>[] = [];
+    const options: any[] = [];
     let start = 0;
     let end = 12;
     if (validRange) {

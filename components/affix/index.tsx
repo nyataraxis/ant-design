@@ -16,7 +16,8 @@ import {
 } from './utils';
 
 function getDefaultTarget() {
-  return typeof window !== 'undefined' ? window : null;
+  const win: Window | undefined | null = window || null;
+  return win;
 }
 
 // Affix
@@ -35,7 +36,7 @@ export interface AffixProps {
   target?: () => Window | HTMLElement | null;
   prefixCls?: string;
   className?: string;
-  children: React.ReactElement;
+  children: any;
 }
 
 enum AffixStatus {

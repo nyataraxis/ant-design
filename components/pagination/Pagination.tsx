@@ -32,7 +32,7 @@ export interface PaginationProps {
   itemRender?: (
     page: number,
     type: 'page' | 'prev' | 'next' | 'jump-prev' | 'jump-next',
-    originalElement: React.ReactElement<HTMLElement>,
+    originalElement: any,
   ) => React.ReactNode;
   role?: string;
   showLessItems?: boolean;

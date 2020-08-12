@@ -163,10 +163,10 @@ class TimePicker extends React.Component<TimePickerProps, any> {
   renderInputIcon(prefixCls: string) {
     const { suffixIcon } = this.props;
     const clockIcon = (suffixIcon &&
-      (React.isValidElement<{ className?: string }>(suffixIcon) &&
+      React.isValidElement<{ className?: string }>(suffixIcon) &&
         React.cloneElement(suffixIcon, {
           className: classNames(suffixIcon.props.className, `${prefixCls}-clock-icon`),
-        }))) || <Icon type="clock-circle" className={`${prefixCls}-clock-icon`} />;
+        })) || <Icon type="clock-circle" className={`${prefixCls}-clock-icon`} />;
 
     return <span className={`${prefixCls}-icon`}>{clockIcon}</span>;
   }
@@ -205,7 +205,7 @@ class TimePicker extends React.Component<TimePickerProps, any> {
           [`${prefixCls}-${size}`]: !!size,
         });
 
-        const pickerAddon = (panel: React.ReactElement<any>) =>
+        const pickerAddon = (panel: any) =>
           addon ? <div className={`${prefixCls}-panel-addon`}>{addon(panel)}</div> : null;
 
         return (

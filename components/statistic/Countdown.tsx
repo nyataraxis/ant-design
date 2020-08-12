@@ -74,7 +74,7 @@ class Countdown extends React.Component<CountdownProps, {}> {
   };
 
   // Countdown do not need display the timestamp
-  valueRender = (node: React.ReactElement<HTMLDivElement>) =>
+  valueRender = (node: any) =>
     React.cloneElement(node, {
       title: undefined,
     });

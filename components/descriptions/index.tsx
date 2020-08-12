@@ -53,16 +53,13 @@ export interface DescriptionsProps {
  * @param children: DescriptionsItem
  * @param column: number
  */
-const generateChildrenRows = (
-  children: React.ReactNode,
-  column: number,
-): React.ReactElement<DescriptionsItemProps>[][] => {
-  const rows: React.ReactElement<DescriptionsItemProps>[][] = [];
-  let columns: React.ReactElement<DescriptionsItemProps>[] | null = null;
+const generateChildrenRows = (children: React.ReactNode, column: number): any[][] => {
+  const rows: any[][] = [];
+  let columns: any[] | null = null;
   let leftSpans: number;
 
   const itemNodes = flattenChildren(children);
-  itemNodes.forEach((node: React.ReactElement<DescriptionsItemProps>, index: number) => {
+  itemNodes.forEach((node: any, index: number) => {
     let itemNode = node;
 
     if (!columns) {
@@ -101,18 +98,14 @@ const generateChildrenRows = (
 };
 
 const renderRow = (
-  children: React.ReactElement<DescriptionsItemProps>[],
+  children: any[],
   index: number,
   { prefixCls }: { prefixCls: string },
   bordered: boolean,
   layout: 'horizontal' | 'vertical',
   colon: boolean,
 ) => {
-  const renderCol = (
-    colItem: React.ReactElement<DescriptionsItemProps>,
-    type: 'label' | 'content',
-    idx: number,
-  ) => {
+  const renderCol = (colItem: any, type: 'label' | 'content', idx: number) => {
     return (
       <Col
         child={colItem}
@@ -127,16 +120,14 @@ const renderRow = (
 
   const cloneChildren: JSX.Element[] = [];
   const cloneContentChildren: JSX.Element[] = [];
-  flattenChildren(children).forEach(
-    (childrenItem: React.ReactElement<DescriptionsItemProps>, idx: number) => {
-      cloneChildren.push(renderCol(childrenItem, 'label', idx));
-      if (layout === 'vertical') {
-        cloneContentChildren.push(renderCol(childrenItem, 'content', idx));
-      } else if (bordered) {
-        cloneChildren.push(renderCol(childrenItem, 'content', idx));
-      }
-    },
-  );
+  flattenChildren(children).forEach((childrenItem: any, idx: number) => {
+    cloneChildren.push(renderCol(childrenItem, 'label', idx));
+    if (layout === 'vertical') {
+      cloneContentChildren.push(renderCol(childrenItem, 'content', idx));
+    } else if (bordered) {
+      cloneChildren.push(renderCol(childrenItem, 'content', idx));
+    }
+  });
 
   if (layout === 'vertical') {
     return [
@@ -236,23 +227,22 @@ class Descriptions extends React.Component<
             colon = true,
             style,
           } = this.props;
-          const prefixCls = getPrefixCls('descriptions', customizePrefixCls);
+          const prefixCls: any = getPrefixCls('descriptions', customizePrefixCls);
 
           const column = this.getColumn();
           const cloneChildren = flattenChildren(children)
-            .map((child: React.ReactElement<DescriptionsItemProps>) => {
+            .map((child: any) => {
+              const prefix: any = {
+                prefixCls,
+              };
               if (React.isValidElement(child)) {
-                return React.cloneElement(child, {
-                  prefixCls,
-                });
+                return React.cloneElement(child, prefix);
               }
               return null;
             })
-            .filter((node: React.ReactElement) => node);
+            .filter((node: any) => node);
 
-          const childrenArray: Array<React.ReactElement<
-            DescriptionsItemProps
-          >[]> = generateChildrenRows(cloneChildren, column);
+          const childrenArray: Array<any[]> = generateChildrenRows(cloneChildren, column);
           return (
             <div
               className={classNames(prefixCls, className, {

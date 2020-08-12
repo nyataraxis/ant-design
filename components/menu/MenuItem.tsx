@@ -5,11 +5,9 @@ import MenuContext, { MenuContextProps } from './MenuContext';
 import Tooltip, { TooltipProps } from '../tooltip';
 import { SiderContext, SiderContextProps } from '../layout/Sider';
 
-export interface MenuItemProps
-  extends Omit<
-    React.HTMLAttributes<HTMLLIElement>,
-    'title' | 'onClick' | 'onMouseEnter' | 'onMouseLeave'
-  > {
+interface MenuItemBase {}
+
+export interface MenuItemProps extends MenuItemBase {
   rootPrefixCls?: string;
   disabled?: boolean;
   level?: number;

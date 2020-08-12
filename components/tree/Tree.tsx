@@ -41,7 +41,7 @@ export interface AntTreeNodeProps {
   selected?: boolean;
   selectable?: boolean;
   icon?: ((treeNode: AntdTreeNodeAttribute) => React.ReactNode) | React.ReactNode;
-  children?: React.ReactElement[];
+  children?: any[];
   [customProp: string]: any;
 }
 
@@ -160,7 +160,7 @@ export interface TreeProps {
   style?: React.CSSProperties;
   showIcon?: boolean;
   icon?: ((nodeProps: AntdTreeNodeAttribute) => React.ReactNode) | React.ReactNode;
-  switcherIcon?: React.ReactElement<any>;
+  switcherIcon?: any;
   prefixCls?: string;
   filterTreeNode?: (node: AntTreeNode) => boolean;
   children?: React.ReactNode;
@@ -187,7 +187,7 @@ export default class Tree extends React.Component<TreeProps, any> {
 
   renderSwitcherIcon = (
     prefixCls: string,
-    switcherIcon: React.ReactElement<any> | undefined,
+    switcherIcon: any | undefined,
     { isLeaf, expanded, loading }: AntTreeNodeProps,
   ) => {
     const { showLine } = this.props;

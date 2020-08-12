@@ -10,7 +10,8 @@ import scrollTo from '../_util/scrollTo';
 import getScroll from '../_util/getScroll';
 
 function getDefaultContainer() {
-  return window;
+  const win: Window | undefined | null = window || null;
+  return win;
 }
 
 function getOffsetTop(element: HTMLElement, container: AnchorContainer): number {

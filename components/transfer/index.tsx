@@ -18,11 +18,11 @@ export { TransferSearchProps } from './search';
 export type TransferDirection = 'left' | 'right';
 
 export interface RenderResultObject {
-  label: React.ReactElement;
+  label: any;
   value: string;
 }
 
-export type RenderResult = React.ReactElement | RenderResultObject | string | null;
+export type RenderResult = any | RenderResultObject | string | null;
 
 type TransferRender = (item: TransferItem) => RenderResult;
 
@@ -247,7 +247,11 @@ class Transfer extends React.Component<TransferProps, any> {
       'Transfer',
       '`handleSelectAll` will be removed, please use `onSelectAll` instead.',
     );
-    this.onItemSelectAll(direction, filteredDataSource.map(({ key }) => key), !checkAll);
+    this.onItemSelectAll(
+      direction,
+      filteredDataSource.map(({ key }) => key),
+      !checkAll,
+    );
   };
 
   // [Legacy] Old prop `body` pass origin check as arg. It's confusing.
