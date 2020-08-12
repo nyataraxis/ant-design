@@ -1,6 +1,10 @@
 {
-  "name": "antd",
-  "version": "3.26.18",
+  "name": "@gostgroup/antd",
+  "version": "3.26.30",
+  "publishConfig": {
+    "registry": "http://nexus.gost-group.com/repository/gp-npm-private/",
+    "scope": "gostgroup"
+  },
   "description": "An enterprise-class UI design language and React components implementation",
   "keywords": [
     "ant",
@@ -13,14 +17,6 @@
     "react-component",
     "ui"
   ],
-  "homepage": "http://ant.design/",
-  "bugs": {
-    "url": "https://github.com/ant-design/ant-design/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ant-design/ant-design"
-  },
   "license": "MIT",
   "contributors": [
     "ant"
@@ -249,9 +245,6 @@
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   },
   "bundlesize": [
     {
