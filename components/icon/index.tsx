@@ -37,7 +37,7 @@ export interface IconProps {
   theme?: ThemeType;
   title?: string;
   onClick?: React.MouseEventHandler<HTMLElement>;
-  component?: React.ComponentType<CustomIconComponentProps>;
+  component?: React.ComponentType<CustomIconComponentProps | React.SVGProps<SVGSVGElement>>;
   twoToneColor?: string;
   viewBox?: string;
   spin?: boolean;
