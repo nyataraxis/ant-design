@@ -1,6 +1,6 @@
 {
   "name": "@gostgroup/antd",
-  "version": "3.11.40",
+  "version": "3.11.50",
   "title": "Ant Design",
   "description": "An enterprise-class UI design language and React-based implementation",
   "main": "lib/index.js",
