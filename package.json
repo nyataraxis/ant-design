@@ -1,12 +1,11 @@
 {
-  "name": "@gostgroup/antd",
+  "name": "@sahbg/antd",
   "version": "3.11.57",
   "title": "Ant Design",
   "description": "An enterprise-class UI design language and React-based implementation",
   "main": "lib/index.js",
   "publishConfig": {
-    "registry": "http://nexus.gost-group.com/repository/gp-npm-private/",
-    "scope": "gostgroup"
+    "@sahbg:registry": "https://gitlab.com/api/v4/projects/22839189/packages/npm/"
   },
   "module": "es/index.js",
   "files": [
@@ -25,7 +24,7 @@
     "@ant-design/icons-react": "=1.1.2",
     "array-tree-filter": "=2.1.0",
     "babel-runtime": "6.x",
-    "bisheng-plugin-antd": "npm:@gostgroup/bisheng-plugin-antd@^0.17.0",
+    "bisheng-plugin-antd": "npm:@sahbg/bisheng-plugin-antd@^0.17.0",
     "classnames": "=2.2.6",
     "create-react-class": "=15.6.3",
     "create-react-context": "^0.2.2",
@@ -58,7 +57,7 @@
     "rc-slider": "=8.6.3",
     "rc-steps": "=3.3.0",
     "rc-switch": "=1.8.0",
-    "rc-table": "npm:@gostgroup/rc-table@^6.10.104",
+    "rc-table": "npm:@sahbg/rc-table@^6.10.105",
     "rc-tabs": "=9.5.2",
     "rc-time-picker": "=3.4.0",
     "rc-tooltip": "=3.7.3",
@@ -85,7 +84,7 @@
     "@yesmeck/offline-plugin": "=5.0.5",
     "ansi-styles": "=3.2.1",
     "antd-theme-generator": "=1.1.4",
-    "antd-tools": "^6.4.10",
+    "antd-tools": "npm:@sahbg/antd-tools@^6.4.10",
     "babel-eslint": "=10.0.1",
     "bisheng": "=1.0.0",
     "bisheng-plugin-description": "=0.1.4",
